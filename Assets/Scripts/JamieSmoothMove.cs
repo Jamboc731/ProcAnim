@@ -26,8 +26,8 @@ public class JamieSmoothMove
 
         vel = GetVelocity(d);
         Debug.Log(vel.magnitude);
-        if(vel.magnitude >= d.minVel)
-            d.bone.Translate(vel * Time.deltaTime);
+        //if(vel.magnitude >= d.minVel)
+        d.bone.Translate(vel * Time.deltaTime);
 
 
     }

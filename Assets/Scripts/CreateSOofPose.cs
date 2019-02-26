@@ -15,7 +15,7 @@ public class CreateSOofPose : Editor
 
         if(GUILayout.Button("Save Pose"))
         {
-            script.CreatePose();
+            //script.CreatePose();
         }
 
     }

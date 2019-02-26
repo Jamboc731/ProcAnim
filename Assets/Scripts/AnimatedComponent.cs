@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class AnimatedComponent : MonoBehaviour {
 
-    AnimData data;
+    public AnimData data;
     Vector3 startPos;
+
+    public GameObject[] poses;
+
     //[SerializeField] Transform target;
     //[SerializeField] float force;
     //[SerializeField] float stiff;
@@ -23,7 +26,7 @@ public class AnimatedComponent : MonoBehaviour {
         data = new AnimData();
 
         data.bone = transform;
-        data.targetPos = startPos + Vector3.up;
+        data.targetPos = startPos + Vector3.up * 5;
         //data.force = force;
         //data.stiffness = stiff;
         //data.damping = damping;
