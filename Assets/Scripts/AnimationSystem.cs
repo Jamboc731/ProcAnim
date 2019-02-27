@@ -6,7 +6,7 @@ using UnityEngine;
 public class AnimationSystem : ComponentSystem
 {
 
-    List<Quaternion> data = new List<Quaternion>();
+    List<Vector3> data = new List<Vector3>();
 
     private struct filter
     {
@@ -39,7 +39,7 @@ public class AnimationSystem : ComponentSystem
 
     protected override void OnStartRunning()
     {
-        GetBoneRotationData();
+        GetVertData();
     }
 
     protected override void OnUpdate()
@@ -61,7 +61,7 @@ public class AnimationSystem : ComponentSystem
         {
             fraction = 0;
             p1Bool = !p1Bool;
-            GetBoneRotationData();
+            GetVertData();
             foreach(var e in GetEntities<filter>())
             {
                 e.AnimatedComponent.data.startPos = e.Transform.eulerAngles;
@@ -70,22 +70,34 @@ public class AnimationSystem : ComponentSystem
 
     }
 
-    private void GetBoneRotationData()
+    //private void GetBoneRotationData()
+    //{
+    //    data = new List<Quaternion>();
+    //    if (p1Bool)
+    //    {
+    //        foreach(var entity in GetEntities<p1Filter>())
+    //        {
+    //            data.Add(entity.Transform.rotation);
+    //        }
+    //    }
+    //    else
+    //    {
+    //        foreach(var entity in GetEntities<p2Filter>())
+    //        {
+    //            data.Add(entity.Transform.rotation);
+    //        }
+    //    }
+    //}
+
+    private void GetVertData()
     {
-        data = new List<Quaternion>();
+        data = new List<Vector3>();
+        SkinnedMeshRenderer mesh;
+
         if (p1Bool)
         {
-            foreach(var entity in GetEntities<p1Filter>())
-            {
-                data.Add(entity.Transform.rotation);
-            }
-        }
-        else
-        {
-            foreach(var entity in GetEntities<p2Filter>())
-            {
-                data.Add(entity.Transform.rotation);
-            }
+            mesh = 
+            foreach(var v in )
         }
     }
 
